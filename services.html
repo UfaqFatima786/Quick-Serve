@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickServe | Choose a Service</title>
+
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPaP8KUI13uTn8pwSDiXSCJCtoKX53C44Mp8zt8mYWRw&s=10"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+                <span>
+                    Quick<span>Serve</span>
+                </span>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="page.html">
+                    Home
+                </a>
+
+                <a href="services.html" class="active">
+                    Services
+                </a>
+
+                <a href="#">
+                    How It Works
+                </a>
+
+                <a href="#">
+                    Become a Provider
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <a href="login.html" class="login-btn" id="navLoginBtn">
+                    <i class="fa-regular fa-user"></i>
+                    Login
+                </a>
+
+                <a href="services.html" class="nav-cta">
+                    Get Started
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <button class="menu-toggle" id="menuToggle">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= PAGE HEADER ================= -->
+
+    <main>
+
+        <section class="page-header">
+
+            <div class="page-header-content">
+
+                <div class="breadcrumb">
+
+                    <a href="page.html">
+                        Home
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span>Services</span>
+
+                </div>
+
+
+                <span class="section-tag">
+                    <i class="fa-solid fa-sparkles"></i>
+                    FIND THE RIGHT SERVICE
+                </span>
+
+
+                <h1>
+                    What do you need
+                    <span>help with?</span>
+                </h1>
+
+
+                <p>
+                    Choose a service category and discover trusted
+                    professionals near you.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= SEARCH ================= -->
+
+        <section class="service-search-section">
+
+            <div class="search-wrapper">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="serviceSearch" placeholder="Search for a service..." autocomplete="off">
+
+            </div>
+
+        </section>
+        <section class="services-section">
+
+            <div class="section-container">
+
+
+                <div class="section-top">
+
+                    <div>
+
+                        <span class="section-tag">
+                            POPULAR CATEGORIES
+                        </span>
+
+                        <h2>
+                            Explore our
+                            <span>services</span>
+                        </h2>
+
+                    </div>
+
+
+                    <span id="serviceCount" class="service-count">
+                        12 Services
+                    </span>
+
+                </div>
+
+
+
+                <div class="services-grid" id="servicesGrid">
+
+                </div>
+                <div class="no-results" id="noResults">
+
+                    <div class="no-results-icon">
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </div>
+
+                    <h3>
+                        No service found
+                    </h3>
+
+                    <p>
+                        Try searching for another service.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+        <section class="provider-cta">
+
+            <div class="cta-container">
+
+                <div class="cta-content">
+
+                    <span class="section-tag light-tag">
+                        ARE YOU A PROFESSIONAL?
+                    </span>
+
+                    <h2>
+                        Turn your skills into
+                        <span>opportunities.</span>
+                    </h2>
+
+                    <p>
+                        Join QuickServe and connect with people
+                        looking for your services.
+                    </p>
+
+                    <a href="#" class="white-btn">
+
+                        Become a Provider
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div class="cta-icon">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </span>
+
+                    <span>
+                        Quick<span>Serve</span>
+                    </span>
+
+                </a>
+
+                <p>
+                    Connecting people with trusted local
+                    service professionals — quickly and easily.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Quick Links</h4>
+
+                <a href="index.html">Home</a>
+
+                <a href="services.html">Services</a>
+
+                <a href="#">How It Works</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>For Providers</h4>
+
+                <a href="#">Become a Provider</a>
+
+                <a href="#">Provider Login</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Support</h4>
+
+                <a href="#">Help Center</a>
+
+                <a href="#">Contact Us</a>
+
+                <a href="#">Privacy Policy</a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 QuickServe. All rights reserved.
+            </span>
+
+            <span>
+                Built for Saylani Hackathon 2026
+            </span>
+
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/services.js"></script>
+
+</body>
+
+</html>

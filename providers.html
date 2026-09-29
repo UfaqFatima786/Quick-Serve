@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickServe | Find Providers</title>
+    <link rel="icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPaP8KUI13uTn8pwSDiXSCJCtoKX53C44Mp8zt8mYWRw&s=10"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/providers.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="page.html" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </span>
+                <span>
+                    Quick<span>Serve</span>
+                </span>
+            </a>
+            <nav class="nav-links">
+                <a href="page.html">
+                    Home
+                </a>
+                <a href="services.html">
+                    Services
+                </a>
+                <a href="providers.html" class="active">
+                    Providers
+                </a>
+            </nav>
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn" id="navLoginBtn">
+                    <i class="fa-regular fa-user"></i>
+                    Login
+                </a>
+                <a href="services.html" class="nav-cta">
+                    Browse Services
+                </a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <section class="provider-hero">
+        <div class="hero-container">
+
+
+            <div class="hero-left">
+                <div class="breadcrumb">
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                    <span id="breadcrumbService">
+                        Providers
+                    </span>
+
+                </div>
+
+
+                <!-- SERVICE BADGE -->
+
+                <div class="category-badge">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <span id="serviceBadge">
+                        Select a Service
+                    </span>
+
+                </div>
+
+
+                <!-- TITLE -->
+
+                <h1>
+
+                    Find the right
+
+                    <span id="serviceTitle">
+                        professional
+                    </span>
+
+                    for you.
+
+                </h1>
+
+
+                <p>
+
+                    Compare trusted local professionals,
+                    check their ratings, experience and pricing,
+                    then choose the provider that fits your needs.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- HERO ART -->
+
+            <div class="hero-art">
+
+
+                <div class="floating-card card-one">
+
+                    <i class="fa-solid fa-star"></i>
+
+                    <div>
+
+                        <strong>
+                            4.9/5
+                        </strong>
+
+                        <small>
+                            Average Rating
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-circle">
+
+                    <i class="fa-solid fa-user-tie"></i>
+
+                </div>
+
+
+                <div class="floating-card card-two">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+
+                        <strong>
+                            Verified
+                        </strong>
+
+                        <small>
+                            Professionals
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     FILTER SECTION
+===================================================== -->
+
+    <section class="filter-section">
+
+        <div class="filter-container">
+
+
+            <!-- SEARCH -->
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text" id="providerSearch" placeholder="Search provider by name or skill...">
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="filter-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <select id="locationFilter">
+
+                    <option value="all">
+                        All Locations
+                    </option>
+
+                    <option value="karachi">
+                        Karachi
+                    </option>
+
+                    <option value="lahore">
+                        Lahore
+                    </option>
+
+                    <option value="islamabad">
+                        Islamabad
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- RATING -->
+
+            <div class="filter-box">
+
+                <i class="fa-solid fa-star"></i>
+
+                <select id="ratingFilter">
+
+                    <option value="all">
+                        Any Rating
+                    </option>
+
+                    <option value="4.5">
+                        4.5+ Rating
+                    </option>
+
+                    <option value="4">
+                        4+ Rating
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- RESET -->
+
+            <button class="reset-btn" id="resetFilters">
+
+                <i class="fa-solid fa-rotate-left"></i>
+
+                Reset
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+     PROVIDERS
+===================================================== -->
+
+    <section class="providers-section">
+
+        <div class="providers-container">
+
+
+            <!-- SECTION HEADING -->
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="mini-label">
+                        AVAILABLE PROFESSIONALS
+                    </span>
+
+                    <h2>
+
+                        Top
+
+                        <span id="headingService">
+                            Professionals
+                        </span>
+
+                    </h2>
+
+                </div>
+
+
+                <div class="results-count">
+
+                    <span id="resultsCount">
+                        0
+                    </span>
+
+                    professionals found
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+             PROVIDER GRID
+        ================================================= -->
+
+            <div class="providers-grid" id="providersGrid">
+
+                <!-- Providers are rendered dynamically by js/providers.js -->
+
+            </div>
+
+
+
+            <!-- =================================================
+             NO RESULTS
+        ================================================= -->
+
+            <div class="no-results" id="noResults">
+
+
+                <div class="no-results-icon">
+
+                    <i class="fa-solid fa-user-slash"></i>
+
+                </div>
+
+
+                <h3>
+                    No providers found
+                </h3>
+
+
+                <p>
+                    Try changing your search or filters,
+                    or choose another service.
+                </p>
+                <a href="services.html" class="back-services">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Browse Services
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <strong>
+                        Verified Providers
+                    </strong>
+                    <span>
+                        Trusted professionals
+                    </span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <strong>
+                        Real Reviews
+                    </strong>
+                    <span>
+                        Honest customer ratings
+                    </span>
+                </div>
+            </div>
+            <div class="trust-item">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                    <strong>
+                        Easy Support
+                    </strong>
+                    <span>
+                        Help whenever you need it
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+
+                    <span class="logo-icon">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                    </span>
+
+                    <span>
+                        Quick<span>Serve</span>
+                    </span>
+
+                </a>
+
+
+                <p>
+
+                    Connecting people with trusted local
+                    service professionals quickly and easily.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Explore
+                </h4>
+
+                <a href="page.html">
+                    Home
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="providers.html">
+                    Providers
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    For Providers
+                </h4>
+
+                <a href="#">
+                    Become a Provider
+                </a>
+
+                <a href="#">
+                    Provider Login
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h4>
+                    Support
+                </h4>
+
+                <a href="#">
+                    Help Center
+                </a>
+
+                <a href="#">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>
+                © 2026 QuickServe
+            </span>
+            <span>
+                Saylani Hackathon Project
+            </span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/providers.js"></script>
+
+</body>
+
+</html>

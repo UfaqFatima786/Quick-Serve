@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickServe | Provider Profile</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/provider-profile.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </span>
+
+            <span>
+                Quick<span>Serve</span>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="providers.html">
+                Providers
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a href="login.html" class="login-btn" id="navLoginBtn">
+                <i class="fa-regular fa-user"></i>
+                Login
+            </a>
+
+            <a href="services.html" class="nav-cta">
+                Browse Services
+            </a>
+
+        </div>
+
+
+        <button class="menu-toggle" id="menuToggle">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PROFILE HERO
+===================================================== -->
+
+<main>
+
+<section class="profile-hero">
+
+    <div class="profile-container">
+
+
+        <!-- BACK -->
+
+        <a href="javascript:history.back()" class="back-link">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to Providers
+
+        </a>
+
+
+        <!-- PROFILE CARD -->
+
+        <div class="profile-main-card">
+
+
+            <!-- LEFT -->
+
+            <div class="profile-left">
+
+
+                <div class="profile-avatar" id="profileAvatar">
+                    --
+                </div>
+
+
+                <div class="verified-badge">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    Verified Professional
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <div class="profile-info">
+
+
+                <div class="profile-heading">
+
+                    <div>
+
+                        <span class="profile-service" id="profileService">
+                            Professional Service
+                        </span>
+
+                        <h1 id="profileName">
+                            Provider Name
+                        </h1>
+
+                        <p id="profileRole">
+                            Professional Service Provider
+                        </p>
+
+                    </div>
+
+
+                    <div class="profile-rating">
+
+                        <div class="rating-number">
+
+                            <i class="fa-solid fa-star"></i>
+
+                            <strong id="profileRating">
+                                0.0
+                            </strong>
+
+                        </div>
+
+                        <span id="profileReviews">
+                            0 reviews
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- META -->
+
+                <div class="profile-meta">
+
+                    <span>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <span id="profileLocation">
+                            Location
+                        </span>
+
+                    </span>
+
+
+                    <span>
+
+                        <i class="fa-solid fa-briefcase"></i>
+
+                        <span id="profileExperience">
+                            0 Years
+                        </span>
+
+                        Experience
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="profile-description" id="profileDescription">
+                    Professional service provider.
+                </p>
+
+
+
+                <!-- PRICE -->
+
+                <div class="profile-price">
+
+                    <span>
+                        Starting from
+                    </span>
+
+                    <strong id="profilePrice">
+                        PKR 0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="profile-actions">
+
+                    <button
+                        class="book-btn"
+                        id="bookServiceBtn">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        Book Service
+
+                    </button>
+
+
+                    <button
+                        class="contact-btn"
+                        id="contactBtn">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        Contact Provider
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DETAILS
+===================================================== -->
+
+<section class="details-section">
+
+    <div class="details-container">
+
+
+        <!-- ABOUT -->
+
+        <div class="details-card">
+
+            <div class="details-icon">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div>
+
+                <h2>
+                    About the Provider
+                </h2>
+
+                <p id="aboutProvider">
+                    Professional service provider with experience
+                    delivering reliable services to customers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div class="details-card">
+
+            <div class="details-icon">
+
+                <i class="fa-solid fa-list-check"></i>
+
+            </div>
+
+            <div class="details-content">
+
+                <h2>
+                    Services Offered
+                </h2>
+
+                <div
+                    class="skills-list"
+                    id="skillsList">
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WHY CHOOSE -->
+
+        <div class="details-card">
+
+            <div class="details-icon">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+            <div class="details-content">
+
+                <h2>
+                    Why Choose This Provider?
+                </h2>
+
+                <ul class="benefits-list">
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Verified professional
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Experienced service provider
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Highly rated by customers
+
+                    </li>
+
+                    <li>
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Reliable and professional service
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BOOKING MODAL
+===================================================== -->
+
+<div class="modal-overlay" id="bookingModal">
+
+    <div class="booking-modal">
+
+
+        <button
+            class="close-modal"
+            id="closeModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="modal-icon">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+        </div>
+
+
+        <h2>
+            Book Service
+        </h2>
+
+
+        <p>
+            Request a service from
+            <strong id="bookingProviderName">
+                this provider
+            </strong>.
+        </p>
+
+
+        <form id="bookingForm">
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="customerPhone"
+                    placeholder="03XX XXXXXXX"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Service Address
+                </label>
+
+                <input
+                    type="text"
+                    id="customerAddress"
+                    placeholder="Enter your address"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Preferred Date
+                </label>
+
+                <input
+                    type="date"
+                    id="bookingDate"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Additional Details
+                </label>
+
+                <textarea
+                    id="bookingDetails"
+                    placeholder="Describe what you need..."></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-booking">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Booking Request
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="logo">
+
+                <span class="logo-icon">
+
+                    <i class="fa-solid fa-bolt"></i>
+
+                </span>
+
+                <span>
+                    Quick<span>Serve</span>
+                </span>
+
+            </a>
+
+
+            <p>
+                Connecting people with trusted local
+                service professionals quickly and easily.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="services.html">
+                Services
+            </a>
+
+            <a href="providers.html">
+                Providers
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                For Providers
+            </h4>
+
+            <a href="#">
+                Become a Provider
+            </a>
+
+            <a href="#">
+                Provider Login
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>
+                Support
+            </h4>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 QuickServe
+        </span>
+
+        <span>
+            Saylani Hackathon Project
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="js/auth.js"></script>
+<script src="js/provider-profile.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QuickServe | My Bookings</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <span class="logo-icon"><i class="fa-solid fa-bolt"></i></span>
+            <span>Quick<span>Serve</span></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="providers.html">Providers</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="login.html" class="login-btn" id="navLoginBtn">
+                <i class="fa-regular fa-user"></i>
+                Login
+            </a>
+            <a href="profile.html" class="nav-cta">
+                <i class="fa-regular fa-id-badge"></i>
+                My Profile
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+</header>
+
+<main>
+<section class="dashboard-page">
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+            <div>
+                <h1>My Bookings</h1>
+                <p id="welcomeText">Track and manage your service requests</p>
+            </div>
+
+            <a href="providers.html" class="nav-cta">
+                <i class="fa-solid fa-plus"></i>
+                Book a New Service
+            </a>
+        </div>
+
+        <div class="dashboard-stats" id="statsRow"></div>
+
+        <div class="booking-list" id="bookingList"></div>
+
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <i class="fa-solid fa-calendar-xmark"></i>
+            <p>You haven't booked any service yet.</p>
+        </div>
+
+    </div>
+</section>
+</main>
+
+<script src="js/auth.js"></script>
+<script src="js/customer-dashboard.js"></script>
+
+</body>
+</html>
