@@ -16,6 +16,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+            <link rel="stylesheet" href="css/navigation.css">
+    
 </head>
 
 <body>
@@ -35,21 +37,17 @@
                 <a href="#services">Services</a>
                 <a href="#providers">Providers</a>
                 <a href="#how-it-works">How It Works</a>
+                <div class="nav-actions">
+                    <a href="login.html" class="login-btn" id="navLoginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        Login
+                    </a>
+                    <a href="services.html" class="nav-cta">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </nav>
-
-            <div class="nav-actions">
-
-                <a href="login.html" class="login-btn" id="navLoginBtn">
-                    <i class="fa-regular fa-user"></i>
-                    Login
-                </a>
-
-                <a href="services.html" class="nav-cta">
-                    Get Started
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-
-            </div>
 
             <button class="menu-toggle" id="menuToggle">
                 <i class="fa-solid fa-bars"></i>
@@ -57,113 +55,69 @@
 
         </div>
     </header>
-
-
-    <!-- ================= HERO ================= -->
-
     <main>
-
         <section class="hero" id="home">
-
             <div class="hero-bg-circle circle-one"></div>
             <div class="hero-bg-circle circle-two"></div>
-
             <div class="hero-container">
-
-                <!-- Hero Content -->
-
                 <div class="hero-content">
-
                     <div class="hero-badge">
                         <span class="badge-dot"></span>
                         Trusted local services, made simple
                     </div>
-
                     <h1>
                         Find the Right
                         <span>Professional</span>
                         for Your Needs.
                     </h1>
-
                     <p>
                         Discover trusted local service providers,
                         book a service in minutes, and track your
                         request from start to finish.
                     </p>
-
-                    <!-- Search -->
-
                     <div class="hero-search">
-
                         <div class="search-icon">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-
                         <input type="text" id="searchInput" placeholder="What service do you need?">
-
                         <button id="searchBtn">
                             Search
                             <i class="fa-solid fa-arrow-right"></i>
                         </button>
-
                     </div>
-
-                    <!-- Popular Searches -->
-
                     <div class="popular-searches">
-
                         <span>Popular:</span>
-
                         <button data-search="Electrician">
                             Electrician
                         </button>
-
                         <button data-search="Plumber">
                             Plumber
                         </button>
-
                         <button data-search="AC Repair">
                             AC Repair
                         </button>
-
                         <button data-search="Cleaning">
                             Cleaning
                         </button>
-
                     </div>
-
-                    <!-- Stats -->
-
                     <div class="hero-stats">
-
                         <div class="hero-stat">
                             <strong>500+</strong>
                             <span>Professionals</span>
                         </div>
-
                         <div class="stat-divider"></div>
-
                         <div class="hero-stat">
                             <strong>1.2K+</strong>
                             <span>Bookings</span>
                         </div>
-
                         <div class="stat-divider"></div>
-
                         <div class="hero-stat">
                             <strong>4.8</strong>
                             <span>Average Rating</span>
                         </div>
-
                     </div>
-
                 </div>
-
-
-                <!-- Hero Visual -->
-
                 <div class="hero-visual">
-
                     <div class="visual-glow"></div>
 
                     <div class="service-orbit orbit-one">
@@ -262,10 +216,6 @@
             </div>
 
         </section>
-
-
-        <!-- ================= SERVICES ================= -->
-
         <section class="services-section" id="services">
 
             <div class="section-container">
@@ -293,26 +243,17 @@
 
 
                 <div class="services-grid" id="servicesGrid">
-                    <!-- JS will render cards -->
                 </div>
 
 
                 <div class="center-btn">
-
                     <button class="outline-btn" id="viewAllBtn">
                         View All Services
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
-
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ================= HOW IT WORKS ================= -->
-
         <section class="how-section" id="how-it-works">
 
             <div class="section-container">
@@ -389,36 +330,21 @@
                             Your selected professional reviews and
                             accepts your booking request.
                         </p>
-
                     </div>
-
-
                     <div class="step-card">
-
                         <div class="step-number">04</div>
-
                         <div class="step-icon">
                             <i class="fa-solid fa-star"></i>
                         </div>
-
                         <h3>Complete & Review</h3>
-
                         <p>
                             Get your service completed and share your
                             experience with a simple review.
                         </p>
-
                     </div>
-
                 </div>
-
             </div>
-
         </section>
-
-
-        <!-- ================= PROVIDER CTA ================= -->
-
         <section class="provider-cta" id="providers">
 
             <div class="cta-container">
@@ -456,10 +382,6 @@
         </section>
 
     </main>
-
-
-    <!-- ================= FOOTER ================= -->
-
     <footer class="footer">
 
         <div class="footer-container">
@@ -549,10 +471,6 @@
         </div>
 
     </footer>
-
-
-    <!-- ================= TOAST ================= -->
-
     <div class="toast" id="toast">
 
         <div class="toast-icon">
@@ -571,8 +489,10 @@
         </button>
 
     </div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="js/supabase.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/script.js"></script>

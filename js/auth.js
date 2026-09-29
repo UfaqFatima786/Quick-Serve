@@ -43,25 +43,12 @@ async function qsRequireLogin(requiredRole) {
     return user;
 }
 
-/* ================= BOOKING ID ================= */
-
 function qsGenerateBookingId() {
     const stamp = Date.now().toString().slice(-7);
     const rand = Math.floor(10 + Math.random() * 90);
     return `QS-${stamp}${rand}`;
 }
 
-/* ================= IMAGE UPLOAD ================= */
-/*
-   Shared uploader for both buckets created in Supabase Storage:
-   - "avatars"          (user profile pictures)
-   - "provider-images"  (provider listing photos)
-
-   Files are stored at  <bucket>/<userId>/<timestamp>.<ext>
-   which matches the storage RLS policies (folder name = auth.uid()).
-
-   Returns the public URL string, or null on failure.
-*/
 async function qsUploadImage(file, bucket, userId) {
     if (!file) return null;
 
@@ -86,8 +73,6 @@ async function qsUploadImage(file, bucket, userId) {
 
     return data.publicUrl;
 }
-
-/* ================= NAVBAR AUTH STATE ================= */
 
 async function qsUpdateNavUI() {
     const loginBtn =

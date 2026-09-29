@@ -1,5 +1,3 @@
-
-
 const services = [
 
     {
@@ -36,27 +34,66 @@ const services = [
         name: "Home Tutor",
         icon: "fa-solid fa-book-open-reader",
         description: "Find skilled tutors for school, college and professional learning."
+    },
+
+    {
+        name: "Carpenter",
+        icon: "fa-solid fa-hammer",
+        description: "Professional furniture repair, woodwork and custom carpentry."
+    },
+
+    {
+        name: "Appliance Repair",
+        icon: "fa-solid fa-screwdriver-wrench",
+        description: "Reliable repair services for your home appliances."
+    },
+
+    {
+        name: "Beauty & Salon",
+        icon: "fa-solid fa-scissors",
+        description: "Professional beauty, grooming and salon services."
+    },
+
+    {
+        name: "Computer Repair",
+        icon: "fa-solid fa-computer",
+        description: "Expert computer, laptop and technical support services."
+    },
+
+    {
+        name: "Auto Services",
+        icon: "fa-solid fa-car",
+        description: "Trusted vehicle maintenance and repair services."
+    },
+
+    {
+        name: "Gardener",
+        icon: "fa-solid fa-seedling",
+        description: "Professional gardening, lawn care and plant maintenance."
     }
 
 ];
 
 
-/* ================= DOM ELEMENTS ================= */
+// ================= ELEMENTS =================
 
-const servicesGrid = document.getElementById("servicesGrid");
+const servicesGrid =
+    document.getElementById("servicesGrid");
 
-const searchInput = document.getElementById("searchInput");
+const searchInput =
+    document.getElementById("searchInput");
 
-const searchBtn = document.getElementById("searchBtn");
+const searchBtn =
+    document.getElementById("searchBtn");
 
 const popularButtons =
     document.querySelectorAll(".popular-searches button");
 
-const menuToggle =
-    document.getElementById("menuToggle");
+// const menuToggle =
+//     document.getElementById("menuToggle");
 
-const navLinks =
-    document.getElementById("navLinks");
+// const navLinks =
+//     document.getElementById("navLinks");
 
 const toast =
     document.getElementById("toast");
@@ -67,8 +104,11 @@ const toastMessage =
 const closeToast =
     document.getElementById("closeToast");
 
+const viewAllBtn =
+    document.getElementById("viewAllBtn");
 
-/* ================= RENDER SERVICES ================= */
+
+// ================= RENDER SERVICES =================
 
 function renderServices(serviceList = services) {
 
@@ -76,11 +116,18 @@ function renderServices(serviceList = services) {
 
     servicesGrid.innerHTML = "";
 
-    serviceList.forEach((service) => {
+    serviceList.forEach((service, index) => {
 
-        const card = document.createElement("article");
+        const card =
+            document.createElement("article");
 
         card.className = "service-card";
+
+        // First 6 visible
+        // Remaining services hidden
+        if (index >= 6) {
+            card.classList.add("extra-service");
+        }
 
         card.innerHTML = `
 
@@ -113,7 +160,34 @@ function renderServices(serviceList = services) {
 }
 
 
-/* ================= SEARCH ================= */
+// ================= VIEW ALL SERVICES =================
+
+if (viewAllBtn) {
+
+    viewAllBtn.addEventListener("click", () => {
+
+        const extraServices =
+            document.querySelectorAll(".extra-service");
+
+        extraServices.forEach(card => {
+
+            card.style.display = "block";
+
+        });
+
+        // Hide button after showing all
+        viewAllBtn.style.display = "none";
+
+        showToast(
+            "All services are now displayed."
+        );
+
+    });
+
+}
+
+
+// ================= SEARCH =================
 
 function performSearch() {
 
@@ -131,11 +205,12 @@ function performSearch() {
         return;
     }
 
-
-    const foundService = services.find(service =>
-        service.name.toLowerCase().includes(query)
-    );
-
+    const foundService =
+        services.find(service =>
+            service.name
+                .toLowerCase()
+                .includes(query)
+        );
 
     if (foundService) {
 
@@ -143,12 +218,9 @@ function performSearch() {
             `${foundService.name} selected. Providers page will open next.`
         );
 
-        /*
-            Later:
-
-            window.location.href =
-            `providers.html?service=${encodeURIComponent(foundService.name)}`;
-        */
+        // If you want direct providers page later:
+        // window.location.href =
+        // `providers.html?service=${encodeURIComponent(foundService.name)}`;
 
     } else {
 
@@ -161,7 +233,7 @@ function performSearch() {
 }
 
 
-/* ================= SEARCH BUTTON ================= */
+// ================= SEARCH BUTTON =================
 
 if (searchBtn) {
 
@@ -173,7 +245,7 @@ if (searchBtn) {
 }
 
 
-/* ================= ENTER KEY SEARCH ================= */
+// ================= ENTER KEY =================
 
 if (searchInput) {
 
@@ -193,7 +265,7 @@ if (searchInput) {
 }
 
 
-/* ================= POPULAR SEARCH ================= */
+// ================= POPULAR SEARCH =================
 
 popularButtons.forEach(button => {
 
@@ -214,13 +286,13 @@ popularButtons.forEach(button => {
 });
 
 
-/* ================= TOAST ================= */
+// ================= TOAST =================
 
 let toastTimer;
 
 function showToast(message) {
 
-    if (!toast) return;
+    if (!toast || !toastMessage) return;
 
     toastMessage.textContent = message;
 
@@ -251,7 +323,7 @@ if (closeToast) {
 }
 
 
-/* ================= MOBILE MENU ================= */
+// ================= MOBILE MENU =================
 
 if (menuToggle) {
 
@@ -263,10 +335,8 @@ if (menuToggle) {
                 "mobile-active"
             );
 
-
             const icon =
                 menuToggle.querySelector("i");
-
 
             if (
                 navLinks.classList.contains(
@@ -300,7 +370,7 @@ if (menuToggle) {
 }
 
 
-/* ================= CLOSE MOBILE MENU ================= */
+// ================= CLOSE MOBILE MENU =================
 
 document.querySelectorAll(
     ".nav-links a"
@@ -335,11 +405,12 @@ document.querySelectorAll(
 });
 
 
-/* ================= SCROLL REVEAL ================= */
+// ================= SCROLL REVEAL =================
 
-const revealElements = document.querySelectorAll(
-    ".service-card, .step-card, .hero-content, .hero-card-main"
-);
+const revealElements =
+    document.querySelectorAll(
+        ".service-card, .step-card, .hero-content, .hero-card-main"
+    );
 
 
 const revealObserver =
@@ -383,9 +454,6 @@ revealElements.forEach(element => {
     revealObserver.observe(element);
 
 });
-
-
-/* ================= INITIALIZE ================= */
 
 document.addEventListener(
     "DOMContentLoaded",

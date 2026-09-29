@@ -1,0 +1,63 @@
+.extra-service {
+    display: none;
+}
+@media (max-width: 999px) {
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .login-btn,
+    .nav-cta {
+        padding: 9px 14px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .nav-cta i {
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .login-btn,
+    .nav-cta {
+        padding: 8px 11px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .nav-actions {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .login-btn,
+    .nav-cta {
+        flex: 1;
+        max-width: 150px;
+        text-align: center;
+        justify-content: center;
+    }
+}
