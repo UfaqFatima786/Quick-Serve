@@ -1,0 +1,170 @@
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: min(1180px, 92%);
+    min-height: 78px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    margin-left: auto;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+}
+
+.menu-toggle {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 150, 180, 0.45);
+    border-radius: 12px;
+
+    background: rgba(255, 150, 180, 0.10);
+
+    color: #ff9fbd;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #ffc0d2;
+
+    background: rgba(255, 150, 180, 0.18);
+
+    border-color: #ff9fbd;
+
+    box-shadow:
+        0 0 18px rgba(255, 120, 160, 0.25);
+}
+
+/* =========================================
+   MOBILE NAVBAR - FINAL
+========================================= */
+
+@media (max-width: 999px) {
+
+    .nav-container {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: calc(100% + 10px);
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 4px;
+
+        padding: 20px;
+
+        background: rgba(9, 7, 11, 0.98);
+
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+
+        border: 1px solid rgba(255,255,255,0.08);
+
+        border-radius: 16px 16px 0 0;
+
+        z-index: 9999;
+    }
+
+    .nav-links.mobile-active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 11px;
+
+        text-align: center;
+
+        border-radius: 8px;
+    }
+
+
+    /* Actions inside same mobile area */
+    .nav-actions {
+        position: absolute;
+
+        top: calc(100% + 10px);
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 145px 20px 20px;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        background: rgba(9, 7, 11, 0.98);
+
+        border-radius: 0 0 16px 16px;
+
+        z-index: 9998;
+    }
+
+    .nav-links.mobile-active ~ .nav-actions {
+        display: flex;
+    }
+
+    .login-btn,
+    .nav-cta {
+        width: 100%;
+        max-width: 280px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 11px 16px;
+    }
+}

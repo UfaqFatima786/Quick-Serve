@@ -26,10 +26,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         rejected: "Rejected"
     };
 
-    /* =========================================
-       CHECK PROVIDER LISTING EXISTS
-    ========================================= */
-
     const { data: providerRow, error: providerError } = await supabaseClient
         .from("providers")
         .select("id, service_name")
@@ -213,4 +209,75 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     await loadBookings();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (!menuToggle || !navLinks) return;
+
+    const icon = menuToggle.querySelector("i");
+
+    menuToggle.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        navLinks.classList.toggle("mobile-active");
+
+        if (navLinks.classList.contains("mobile-active")) {
+
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+    navLinks.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("mobile-active");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        });
+
+    });
+
+    document.addEventListener("click", (e) => {
+
+        if (
+            !menuToggle.contains(e.target) &&
+            !navLinks.contains(e.target)
+        ) {
+
+            navLinks.classList.remove("mobile-active");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 999) {
+
+            navLinks.classList.remove("mobile-active");
+
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
 });

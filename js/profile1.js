@@ -53,9 +53,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     render(user);
-
-    /* ============ AVATAR UPLOAD ============ */
-
     if (changePhotoBtn && avatarInput) {
         changePhotoBtn.addEventListener("click", () => avatarInput.click());
     }
@@ -90,9 +87,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             render(user);
         });
     }
-
-    /* ============ SAVE NAME / PHONE ============ */
-
     profileForm.addEventListener("submit", async event => {
 
         event.preventDefault();
@@ -119,5 +113,103 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     logoutBtn.addEventListener("click", () => qsLogout());
+
+});
+
+/* =========================================
+   RESPONSIVE NAVBAR
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    const menuIcon = menuToggle.querySelector("i");
+
+
+    /* =========================
+       OPEN / CLOSE MENU
+    ========================= */
+
+    menuToggle.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        navLinks.classList.toggle("mobile-active");
+
+        const isOpen =
+            navLinks.classList.contains("mobile-active");
+
+        if (isOpen) {
+
+            menuIcon.classList.remove("fa-bars");
+            menuIcon.classList.add("fa-xmark");
+
+        } else {
+
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+    /* =========================
+       CLOSE MENU AFTER LINK CLICK
+    ========================= */
+
+    const navItems = navLinks.querySelectorAll("a");
+
+    navItems.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navLinks.classList.remove("mobile-active");
+
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+
+        });
+
+    });
+
+
+    /* =========================
+       CLOSE MENU WHEN CLICKING
+       OUTSIDE NAVBAR
+    ========================= */
+
+    document.addEventListener("click", (e) => {
+
+        if (
+            !navLinks.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+
+            navLinks.classList.remove("mobile-active");
+
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+
+        }
+
+    });
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 999) {
+
+            navLinks.classList.remove("mobile-active");
+
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+
+        }
+
+    });
 
 });

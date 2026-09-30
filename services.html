@@ -20,41 +20,33 @@
 <body>
     <header class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo">
+            <a href="page.html" class="logo">
                 <span class="logo-icon">
                     <i class="fa-solid fa-bolt"></i>
                 </span>
-                <span>
-                    Quick<span>Serve</span>
-                </span>
+
+                <span>Quick<span>Serve</span></span>
             </a>
-            <nav class="nav-links">
-                <a href="page.html">
-                    Home
-                </a>
-                <a href="services.html" class="active">
-                    Services
-                </a>
-                <a href="#">
-                    How It Works
-                </a>
-                <a href="#">
-                    Become a Provider
-                </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#services">Services</a>
+                <a href="#providers">Providers</a>
+                <a href="#how-it-works">How It Works</a>
+                <div class="nav-actions">
+                    <a href="login.html" class="login-btn" id="navLoginBtn">
+                        <i class="fa-regular fa-user"></i>
+                        Login
+                    </a>
+                    <a href="services.html" class="nav-cta">
+                        Get Started
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </nav>
-            <div class="nav-actions">
-                <a href="login.html" class="login-btn" id="navLoginBtn">
-                    <i class="fa-regular fa-user"></i>
-                    Login
-                </a>
-                <a href="services.html" class="nav-cta">
-                    Get Started
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
             <button class="menu-toggle" id="menuToggle">
                 <i class="fa-solid fa-bars"></i>
             </button>
+
         </div>
     </header>
     <main>
@@ -96,11 +88,6 @@
             </div>
 
         </section>
-
-
-
-        <!-- ================= SEARCH ================= -->
-
         <section class="service-search-section">
 
             <div class="search-wrapper">

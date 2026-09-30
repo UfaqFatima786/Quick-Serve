@@ -28,13 +28,6 @@
 }
 
 
-/* RESET */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html {
     scroll-behavior: smooth;
@@ -58,11 +51,6 @@ button,
 input {
     font-family: inherit;
 }
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
 
 .navbar {
     position: sticky;
@@ -233,11 +221,6 @@ input {
 
     font-size: 17px;
 }
-
-
-/* =========================================================
-   PAGE HEADER
-========================================================= */
 
 .page-header {
     position: relative;

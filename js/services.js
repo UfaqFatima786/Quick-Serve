@@ -63,11 +63,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return "fa-ellipsis";
     }
 
-
-    // ==========================================
-    // LOAD SERVICES FROM SUPABASE
-    // ==========================================
-
     async function loadServices() {
 
         try {
@@ -117,11 +112,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
     }
-
-
-    // ==========================================
-    // RENDER SERVICES
-    // ==========================================
 
     function renderServices(serviceList) {
 
@@ -199,90 +189,42 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
 
             `;
-
-
-            // ==========================================
-            // SERVICE CLICK
-            // ==========================================
-
             card.addEventListener("click", () => {
-
                 window.location.href =
                     `providers.html?service=${encodeURIComponent(service.name)}`;
-
             });
-
-
             servicesGrid.appendChild(card);
-
         });
-
-
         if (serviceCount) {
-
-            serviceCount.textContent =
-                `${serviceList.length} Services`;
+        serviceCount.textContent =
+               `${serviceList.length} Services`;
 
         }
-
     }
-
-
-    // ==========================================
-    // SEARCH SERVICES
-    // ==========================================
-
     function searchServices() {
-
         const search = searchInput
             ? searchInput.value.trim().toLowerCase()
             : "";
-
-
         const filteredServices = services.filter(service => {
-
             const name =
                 (service.name || "")
                     .toLowerCase();
-
             const description =
                 (service.description || "")
                     .toLowerCase();
-
-
             return (
                 name.includes(search) ||
                 description.includes(search)
             );
-
         });
-
-
         renderServices(filteredServices);
-
     }
-
-
-    // ==========================================
-    // ESCAPE HTML
-    // ==========================================
-
     function escapeHtml(value) {
-
         const div =
             document.createElement("div");
-
         div.textContent = value;
-
         return div.innerHTML;
-
     }
-
-
-    // ==========================================
-    // SEARCH EVENT
-    // ==========================================
-
     if (searchInput) {
 
         searchInput.addEventListener(
@@ -292,38 +234,93 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
 
+// const menuToggle =
+//     document.getElementById("menuToggle");
 
-    // ==========================================
-    // MOBILE MENU
-    // ==========================================
+// const navLinks =
+//     document.getElementById("navLinks");
 
-    const menuToggle =
-        document.getElementById("menuToggle");
+// if (menuToggle && navLinks) {
 
-    const navLinks =
-        document.querySelector(".nav-links");
+//     menuToggle.addEventListener("click", () => {
 
+//         navLinks.classList.toggle("mobile-active");
 
-    if (menuToggle && navLinks) {
+//         const icon =
+//             menuToggle.querySelector("i");
 
-        menuToggle.addEventListener(
-            "click",
-            () => {
+//         if (navLinks.classList.contains("mobile-active")) {
 
-                navLinks.classList.toggle(
-                    "mobile-active"
-                );
+//             icon.classList.remove("fa-bars");
+//             icon.classList.add("fa-xmark");
 
-            }
-        );
+//         } else {
 
-    }
+//             icon.classList.remove("fa-xmark");
+//             icon.classList.add("fa-bars");
 
+//         }
 
-    // ==========================================
-    // START
-    // ==========================================
+//     });
 
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    if (!menuToggle || !navLinks) return;
+
+    const menuIcon = menuToggle.querySelector("i");
+    menuToggle.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        navLinks.classList.toggle("mobile-active");
+
+        const isOpen =
+            navLinks.classList.contains("mobile-active");
+
+        if (isOpen) {
+
+            menuIcon.classList.remove("fa-bars");
+            menuIcon.classList.add("fa-xmark");
+
+        } else {
+
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+
+        }
+
+    });
+    const navItems = navLinks.querySelectorAll("a");
+    navItems.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("mobile-active");
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+        });
+    });
+    document.addEventListener("click", (e) => {
+        if (
+            !navLinks.contains(e.target) &&
+            !menuToggle.contains(e.target)
+        ) {
+            navLinks.classList.remove("mobile-active");
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+        }
+    });
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 999) {
+            navLinks.classList.remove("mobile-active");
+            menuIcon.classList.remove("fa-xmark");
+            menuIcon.classList.add("fa-bars");
+        }
+    });
+});
     await loadServices();
 
 });
