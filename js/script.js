@@ -74,9 +74,6 @@ const services = [
 
 ];
 
-
-// ================= ELEMENTS =================
-
 const servicesGrid =
     document.getElementById("servicesGrid");
 
