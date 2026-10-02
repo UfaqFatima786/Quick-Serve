@@ -13,10 +13,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const serviceTitle = document.getElementById("serviceTitle");
     const headingService = document.getElementById("headingService");
 
-    /* =========================================
-       GET SERVICE FROM URL (?service=Cleaning)
-    ========================================= */
-
     const params = new URLSearchParams(window.location.search);
     let selectedService = params.get("service");
 

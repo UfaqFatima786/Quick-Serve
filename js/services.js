@@ -234,66 +234,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     }
 
-// const menuToggle =
-//     document.getElementById("menuToggle");
-
-// const navLinks =
-//     document.getElementById("navLinks");
-
-// if (menuToggle && navLinks) {
-
-//     menuToggle.addEventListener("click", () => {
-
-//         navLinks.classList.toggle("mobile-active");
-
-//         const icon =
-//             menuToggle.querySelector("i");
-
-//         if (navLinks.classList.contains("mobile-active")) {
-
-//             icon.classList.remove("fa-bars");
-//             icon.classList.add("fa-xmark");
-
-//         } else {
-
-//             icon.classList.remove("fa-xmark");
-//             icon.classList.add("fa-bars");
-
-//         }
-
-//     });
-
-// }
-
 document.addEventListener("DOMContentLoaded", () => {
-
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
-
     if (!menuToggle || !navLinks) return;
-
     const menuIcon = menuToggle.querySelector("i");
     menuToggle.addEventListener("click", (e) => {
-
         e.stopPropagation();
-
         navLinks.classList.toggle("mobile-active");
-
         const isOpen =
             navLinks.classList.contains("mobile-active");
-
         if (isOpen) {
-
             menuIcon.classList.remove("fa-bars");
             menuIcon.classList.add("fa-xmark");
-
         } else {
-
             menuIcon.classList.remove("fa-xmark");
             menuIcon.classList.add("fa-bars");
-
         }
-
     });
     const navItems = navLinks.querySelectorAll("a");
     navItems.forEach(link => {
