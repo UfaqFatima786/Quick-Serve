@@ -1,7 +1,7 @@
 # ⚡ QuickServe – Local Services Booking Platform
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Project-Saylani%20Hackathon%202026-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Project-%20Hackathon%202026-orange?style=for-the-badge" />
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
@@ -265,75 +265,6 @@ Image storage integration supports provider listing photos and their display wit
 
 ---
 
-## 📂 Project Structure
-
-```text
-Quick-Serve/
-│
-├── css/
-│   ├── style.css
-│   ├── auth.css
-│   ├── services.css
-│   ├── navigation.css
-│   ├── profiles.css
-│   └── list.css
-│
-├── files/
-│
-├── js/
-│   ├── supabase.js
-│   ├── auth.js
-│   ├── signup1.js
-│   └── ... other application scripts
-│
-├── index.html
-├── page.html
-├── login.html
-├── services.html
-├── providers.html
-├── providers-profile.html
-├── customer-dashboard.html
-├── provider-dashboard.html
-├── provider-setup.html
-├── profile.html
-│
-└── README.md
-```
-
----
-
-## ⚙️ Installation & Setup
-
-Want to run QuickServe locally? Follow these steps.
-
-**1. Clone the repository**
-
-```bash
-git clone https://github.com/UfaqFatima786/Quick-Serve.git
-```
-
-**2. Navigate to the project folder**
-
-```bash
-cd Quick-Serve
-```
-
-**3. Configure Supabase**
-
-- Create a project on [Supabase](https://supabase.com/).
-- Configure the required authentication settings.
-- Set up the required database tables and storage buckets.
-- Add your Supabase Project URL and Anon/Publishable Key to the application's Supabase configuration file.
-- Ensure the database schema matches the application code.
-
-**4. Run the project**
-
-Open `index.html` or `page.html` using Live Server in VS Code.
-
-Make sure the Supabase configuration is properly set up before testing authentication and database-connected functionality.
-
----
-
 ## 🎯 Project Objectives
 
 - Simplify the process of finding local service professionals.
@@ -363,20 +294,6 @@ Building QuickServe helped me gain practical experience in:
 - Organizing project files and maintaining consistent UI design.
 - Using Git and GitHub for version control.
 - Deploying a web application using Netlify.
-
----
-
-## 🚀 Future Enhancements
-
-Potential improvements for QuickServe:
-
-- Online payment gateway integration.
-- Real-time booking notifications.
-- Advanced booking status tracking.
-- Improved provider verification.
-- Enhanced customer feedback and review management.
-- Real-time communication between customers and providers.
-- Additional search and filtering options.
 
 ---
 
