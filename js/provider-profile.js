@@ -36,10 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    /* =========================================
-       FETCH PROVIDER FROM SUPABASE
-    ========================================= */
-
     const { data: provider, error } = await supabaseClient
         .from("providers")
         .select(`
