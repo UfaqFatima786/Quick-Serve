@@ -36,12 +36,10 @@ async function qsLogout() {
 
 async function qsRequireLogin(requiredRole) {
     const user = await qsGetCurrentUser();
-
     if (!user) {
         window.location.href = "login.html";
         return null;
     }
-
     if (requiredRole && user.role !== requiredRole) {
         window.location.href =
             user.role === "provider"
@@ -49,7 +47,6 @@ async function qsRequireLogin(requiredRole) {
                 : "customer-dashboard.html";
         return null;
     }
-
     return user;
 }
 
