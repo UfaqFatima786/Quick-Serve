@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             rating,
             description,
             image_url,
-            profiles ( full_name )
+            profiles ( full_name, phone )
         `)
         .eq("id", providerId)
         .single();
@@ -223,7 +223,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     const contactBtn = document.getElementById("contactBtn");
     if (contactBtn) {
         contactBtn.addEventListener("click", () => {
-            alert(`You selected ${providerName}. Contact feature can be added later (e.g. WhatsApp link).`);
+            const phone = provider.profiles?.phone?.trim();
+            if (!phone) {
+                alert(`${providerName} has not added a phone number yet.`);
+                return;
+            }
+
+            let whatsappNumber = phone.replace(/\D/g, "");
+            if (whatsappNumber.startsWith("00")) {
+                whatsappNumber = whatsappNumber.slice(2);
+            } else if (whatsappNumber.startsWith("0")) {
+                whatsappNumber = `92${whatsappNumber.slice(1)}`;
+            } else if (!phone.startsWith("+") && whatsappNumber.length === 10) {
+                whatsappNumber = `92${whatsappNumber}`;
+            }
+
+            if (!/^\d{7,15}$/.test(whatsappNumber)) {
+                alert(`${providerName}'s phone number is not valid for WhatsApp.`);
+                return;
+            }
+
+            const message = `Hi ${providerName}, I found your ${provider.service_name} service on QuickServe and would like to get in touch.`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
         });
     }
 
