@@ -97,6 +97,11 @@ const closeToast =
 
 const viewAllBtn =
     document.getElementById("viewAllBtn");
+const homeMenuToggle =
+    document.getElementById("menuToggle");
+const homeNavLinks =
+    document.getElementById("navLinks");
+
 function renderServices(serviceList = services) {
     if (!servicesGrid) return;
     servicesGrid.innerHTML = "";
@@ -225,54 +230,15 @@ if (closeToast) {
 
 }
 
-if (menuToggle) {
-    menuToggle.addEventListener(
-        "click",
-        () => {
-            navLinks.classList.toggle(
-                "mobile-active"
-            );
-            const icon =
-                menuToggle.querySelector("i");
-            if (
-                navLinks.classList.contains(
-                    "mobile-active"
-                )
-            ) {
-
-                icon.classList.remove(
-                    "fa-bars"
-                );
-
-                icon.classList.add(
-                    "fa-xmark"
-                );
-            } else {
-                icon.classList.remove(
-                    "fa-xmark"
-                );
-                icon.classList.add(
-                    "fa-bars"
-                );
-
-            }
-
-        }
-    );
-
-}
-
 document.querySelectorAll(
     ".nav-links a"
 ).forEach(link => {
     link.addEventListener(
         "click",
         () => {
-            navLinks.classList.remove(
-                "mobile-active"
-            );
-            const icon =
-                menuToggle?.querySelector("i");
+            homeNavLinks?.classList.remove("mobile-active");
+            const icon = homeMenuToggle?.querySelector("i");
+            homeMenuToggle?.setAttribute("aria-expanded", "false");
             if (icon) {
                 icon.classList.remove(
                     "fa-xmark"

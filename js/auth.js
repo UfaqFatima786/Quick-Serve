@@ -1,9 +1,19 @@
-// const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.querySelector(".nav-links");
+const menuToggleButton = document.getElementById("menuToggle");
+const navLinksMenu = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("mobile-active");
-});
+if (menuToggleButton && navLinksMenu) {
+    menuToggleButton.addEventListener("click", () => {
+        const isOpen = navLinksMenu.classList.toggle("mobile-active");
+        const icon = menuToggleButton.querySelector("i");
+
+        menuToggleButton.setAttribute("aria-expanded", String(isOpen));
+        if (icon) {
+            icon.classList.toggle("fa-bars", !isOpen);
+            icon.classList.toggle("fa-xmark", isOpen);
+        }
+    });
+}
+
 async function qsGetCurrentUser() {
     const { data: { session } } = await supabaseClient.auth.getSession();
     if (!session) return null;
