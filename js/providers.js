@@ -33,16 +33,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             : "QuickServe | Find Providers";
     }
 
-    /* =========================================
-       FETCH PROVIDERS FROM SUPABASE
-    ========================================= */
-
     let allProviders = [];
-
     async function loadProviders() {
-
         providersGrid.innerHTML = `<p style="padding:40px; text-align:center; color:var(--muted, #888);">Loading providers...</p>`;
-
         const { data, error } = await supabaseClient
             .from("providers")
             .select(`
@@ -57,30 +50,24 @@ document.addEventListener("DOMContentLoaded", async () => {
                 profiles ( full_name )
             `)
             .order("rating", { ascending: false });
-
         if (error) {
             console.error(error);
             providersGrid.innerHTML = `<p style="padding:40px; text-align:center; color:#ff5c5c;">Could not load providers: ${error.message}</p>`;
             return;
         }
-
         allProviders = data || [];
         renderProviders();
     }
-
     function initials(name) {
         if (!name) return "?";
         return name.split(" ").map(p => p[0]).join("").slice(0, 2).toUpperCase();
     }
-
     function providerCardHTML(p) {
-
         const name = p.profiles?.full_name || "Provider";
         const ratingValue = p.rating ? Number(p.rating).toFixed(1) : "New";
         const avatarStyle = p.image_url
             ? `background-image:url('${p.image_url}'); background-size:cover; background-position:center;`
             : "";
-
         return `
             <article
                 class="provider-card"
@@ -89,7 +76,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 data-location="${(p.location || "").toLowerCase()}"
                 data-rating="${p.rating || 0}"
                 data-id="${p.id}">
-
                 <div class="provider-top">
                     <div class="provider-avatar" style="${avatarStyle}">
                         ${p.image_url ? "" : initials(name)}
@@ -99,27 +85,22 @@ document.addEventListener("DOMContentLoaded", async () => {
                         Verified
                     </span>
                 </div>
-
                 <div class="provider-info">
                     <h3>${name}</h3>
                     <span class="provider-role">${p.service_name || ""}</span>
-
                     <div class="rating">
                         <i class="fa-solid fa-star"></i>
                         <strong>${ratingValue}</strong>
                     </div>
-
                     <div class="provider-meta">
                         <span><i class="fa-solid fa-location-dot"></i> ${p.location || "N/A"}</span>
                         <span><i class="fa-solid fa-briefcase"></i> ${p.experience || 0} Years</span>
                     </div>
-
                     <div class="provider-bottom">
                         <div class="price">
                             <small>Starting from</small>
                             <strong>PKR ${Number(p.price || 0).toLocaleString()}</strong>
                         </div>
-
                         <button class="profile-btn" data-provider-id="${p.id}">
                             View Profile
                             <i class="fa-solid fa-arrow-right"></i>
@@ -130,50 +111,33 @@ document.addEventListener("DOMContentLoaded", async () => {
         `;
     }
 
-    /* =========================================
-       FILTER + RENDER
-    ========================================= */
-
     function renderProviders() {
-
         const search = providerSearch ? providerSearch.value.trim().toLowerCase() : "";
         const location = locationFilter ? locationFilter.value.toLowerCase() : "all";
         const rating = ratingFilter ? ratingFilter.value : "all";
-
         const filtered = allProviders.filter(p => {
-
             const name = (p.profiles?.full_name || "").toLowerCase();
             const service = (p.service_name || "").toLowerCase();
             const loc = (p.location || "").toLowerCase();
             const ratingValue = parseFloat(p.rating || 0);
-
             const serviceMatch = selectedService
                 ? service === selectedService.toLowerCase()
                 : true;
-
             const searchMatch = search
                 ? name.includes(search) || service.includes(search)
                 : true;
-
             const locationMatch = location !== "all" ? loc === location : true;
             const ratingMatch = rating !== "all" ? ratingValue >= parseFloat(rating) : true;
-
             return serviceMatch && searchMatch && locationMatch && ratingMatch;
         });
-
         if (resultsCount) resultsCount.textContent = filtered.length;
-
         if (filtered.length === 0) {
             providersGrid.innerHTML = "";
             if (noResults) noResults.style.display = "block";
             return;
         }
-
         if (noResults) noResults.style.display = "none";
-
         providersGrid.innerHTML = filtered.map(providerCardHTML).join("");
-
-        // wire up "View Profile" buttons
         providersGrid.querySelectorAll(".profile-btn").forEach(btn => {
             btn.addEventListener("click", () => {
                 const id = btn.dataset.providerId;
@@ -181,15 +145,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         });
     }
-
-    /* =========================================
-       FILTER EVENTS
-    ========================================= */
-
     if (providerSearch) providerSearch.addEventListener("input", renderProviders);
     if (locationFilter) locationFilter.addEventListener("change", renderProviders);
     if (ratingFilter) ratingFilter.addEventListener("change", renderProviders);
-
     if (resetFilters) {
         resetFilters.addEventListener("click", () => {
             if (providerSearch) providerSearch.value = "";
@@ -200,22 +158,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             renderProviders();
         });
     }
-
-    /* =========================================
-       MOBILE MENU
-    ========================================= */
-
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.querySelector(".nav-links");
-
     if (menuToggle && navLinks) {
         menuToggle.addEventListener("click", () => navLinks.classList.toggle("show"));
     }
-
-    /* =========================================
-       INIT
-    ========================================= */
-
     updateServiceUI();
     await loadProviders();
 });
