@@ -1,172 +1,401 @@
-# ⚡ QuickServe — Local Services Booking Platform
+# ⚡ QuickServe – Local Services Booking Platform
 
 <p align="center">
-  <b>Find Services. Connect with Providers. Get Things Done!</b>
+  <img src="https://img.shields.io/badge/Project-Saylani%20Hackathon%202026-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
 </p>
 
 <p align="center">
-  A modern web-based platform that connects customers with local service providers through a simple, responsive, and user-friendly interface.
+  <strong>Find Services. Connect with Professionals. Get Things Done!</strong>
+</p>
+
+<p align="center">
+  QuickServe is a responsive, database-connected local services booking platform that brings customers and service providers together through a convenient and user-friendly experience.
 </p>
 
 ---
-
-## 📌 About the Project
-
-**QuickServe** is a local services booking web application designed to make finding and booking professional services easier and more convenient. It allows customers to explore service categories, discover providers, and manage their booking activities, while service providers can manage their listings and booking requests.
-
-The project combines a modern frontend interface with **Supabase Authentication and database CRUD operations** to provide an interactive web application experience.
-
-QuickServe features a stylish dark theme with red, pink, and orange gradient accents, responsive layouts, and dedicated customer and provider dashboards.
 
 ## 🌐 Live Demo
 
-🔗 **Live Website:** [QuickServe](https://quick-serve.netlify.app/)
+🔗 **Live Website:** [QuickServe – Visit Website](https://quick-serve-hackathon.netlify.app/)
 
-🔗 **GitHub Repository:** [Quick-Serve](https://github.com/UfaqFatima786/Quick-Serve)
+💻 **GitHub Repository:** [UfaqFatima786/Quick-Serve](https://github.com/UfaqFatima786/Quick-Serve)
 
-## ✨ Key Features
+---
 
-- 🔐 **User Authentication** — Sign up and log in using Supabase Authentication.
-- 🗄️ **Database Integration** — Connect the frontend application to a Supabase backend.
-- 🔄 **CRUD Operations** — Create, Read, Update, and Delete database records in supported application workflows.
-- 🛠️ **Multiple Service Categories** — Explore services including AC repair, appliance repair, auto services, beauty and salon, computer and mobile repair, electrical work, home cleaning, plumbing, and more.
-- 🔎 **Provider Discovery** — Browse available service providers.
-- 📍 **Provider Filtering** — Find suitable providers using available search and filtering options.
-- ⭐ **Provider Ratings** — Use provider ratings to help evaluate service options.
-- 📅 **Service Booking Workflow** — Submit and manage service booking requests.
-- 👤 **Customer Dashboard** — Access customer-related features and booking activities.
-- 🧰 **Provider Dashboard** — Manage provider-side activities and booking requests.
-- 📝 **Provider Listing Management** — Set up and manage a provider listing.
-- 🔗 **Dynamic Navigation** — Navigate between service categories, provider listings, authentication pages, and dashboards.
-- 📱 **Responsive Design** — Adaptable interface for desktop, tablet, and mobile devices.
-- 🎨 **Modern Dark UI** — Dark backgrounds with red, pink, and orange gradient accents.
+## 📌 About The Project
 
-## 🧑‍💻 Tech Stack
+QuickServe is a local service discovery and booking web application developed to simplify the process of finding and connecting with professional service providers.
 
-| Technology | Purpose |
-|---|---|
-| HTML5 | Structuring web pages |
-| CSS3 | Styling, layouts, and responsive design |
-| JavaScript | Dynamic interactions and application logic |
-| Bootstrap | Responsive layouts and UI components |
-| Supabase Authentication | User registration and login |
-| Supabase Database | Data storage and CRUD functionality |
-| Git | Version control |
-| GitHub | Source code hosting and project management |
-| Netlify | Website deployment, if configured for the live project |
+The platform provides two different user experiences: **Customer** and **Service Provider**.
 
-## 🔐 Supabase Authentication
+Customers can explore different service categories, search for professionals, compare their experience and pricing, view provider profiles, and submit service booking requests.
 
-QuickServe integrates **Supabase Authentication** to support user account management.
+Service providers can create their own service listings, showcase their experience and pricing, upload listing photos, and manage incoming booking requests through a dedicated dashboard.
 
-Authentication features include:
+The application integrates **Supabase Authentication and Database** to support user authentication and dynamic application data.
 
-- User registration and sign-up.
-- User login and authentication.
-- Integration between the frontend and Supabase Auth.
-- Access to customer and provider features according to the application's role-based workflow.
+QuickServe features a modern dark-themed interface with attractive red, pink, and orange gradient accents, interactive elements, and responsive layouts for different screen sizes.
 
-## 🗄️ Supabase Database & CRUD Operations
+---
 
-CRUD stands for **Create, Read, Update, and Delete**. These four operations form the foundation of database-driven applications.
+## ✨ Features & Functionality
 
-QuickServe uses Supabase database integration to handle application data through supported frontend workflows.
+### 🔐 1. User Authentication
 
-| Operation | Functionality |
-|---|---|
-| **Create** | Insert new records into the database. |
-| **Read** | Retrieve and display existing database records. |
-| **Update** | Modify existing records when information changes. |
-| **Delete** | Remove records when a deletion action is available. |
+- User registration using Supabase Authentication.
+- Secure login functionality.
+- Separate Customer and Provider registration options.
+- Full name, email, phone number and password fields.
+- Form validation for required information.
+- Password confirmation validation.
+- Role-based user experience.
 
-### Benefits of CRUD Integration
+### 🛠️ 2. Service Categories
 
-- Enables interaction between the frontend and backend.
-- Supports managing application data.
-- Helps organize service and booking-related information.
-- Provides practical experience with database operations and asynchronous JavaScript.
+Explore 12 different service categories:
 
-*Note: The exact records and operations depend on the features implemented in the project's code and Supabase configuration.*
+- AC Repair
+- Appliance Repair
+- Auto Services
+- Beauty & Salon
+- Computer & Mobile Repair
+- Electrical Services
+- Home Cleaning
+- Plumbing
+- And other available service categories.
+
+- Dynamic service cards.
+- Search services by name.
+- Interactive service navigation.
+- Easy access to relevant service providers.
+
+### 👨‍🔧 3. Service Provider Discovery
+
+Find suitable professionals through a dedicated Providers section.
+
+- Browse available service providers.
+- Search providers by name or skill.
+- Filter providers by location.
+- Filter providers according to ratings.
+- View provider experience and starting prices.
+- View provider profile details.
+- Reset applied filters.
+- Explore available professionals based on selected services.
+
+**Available Location Filters:**
+- Karachi
+- Lahore
+- Islamabad
+
+**Available Rating Filters:**
+- 4.5+ Rating
+- 4+ Rating
+- Any Rating
+
+### 👤 4. Detailed Provider Profiles
+
+Every provider has a dedicated profile page displaying relevant service information.
+
+- Provider name and profile information.
+- Service category and skills.
+- Provider location.
+- Years of experience.
+- Customer ratings and reviews count.
+- Service description.
+- Starting price in PKR.
+- Listing photo.
+- Book Service option.
+- Contact Provider option.
+
+### 📅 5. Service Booking System
+
+Customers can submit service booking requests directly through a provider's profile.
+
+The booking form includes:
+
+- Customer name.
+- Phone number.
+- Service address.
+- Selected service information.
+- Booking details.
+
+Customers can access their booking activities through their dedicated dashboard.
+
+### 📊 6. Customer Dashboard
+
+A dedicated dashboard for customers to access their booking information.
+
+- View personal booking activities.
+- Access booking-related information.
+- Manage supported booking workflows.
+- Navigate between the platform's main sections.
+
+### 🧰 7. Provider Dashboard
+
+Service providers get a separate dashboard for managing incoming service requests.
+
+- View incoming booking requests.
+- Access booking-related information.
+- View dashboard statistics.
+- Manage provider-side booking activities.
+- Access the My Listing section.
+- Navigate to personal profile information.
+
+### 📝 8. Provider Listing Management
+
+Providers can create their own service listings through the My Listing page.
+
+Listing information includes:
+
+- Service category selection.
+- Location / City.
+- Years of experience.
+- Starting price in PKR.
+- Service description.
+- Listing photo upload.
+- Image preview.
+- Save Listing functionality.
+
+The listing information is used to present provider details to potential customers.
+
+### 👥 9. Profile Management
+
+- Dedicated profile page.
+- Access personal account information.
+- View provider-related profile details.
+- Navigate between dashboard and profile sections.
+
+### 📱 10. Fully Responsive Design
+
+QuickServe is designed to provide a smooth browsing experience across different screen sizes.
+
+- Responsive desktop layout.
+- Tablet-friendly interface.
+- Mobile-friendly page layouts.
+- Responsive navigation menu.
+- Mobile navigation toggle.
+- Flexible service and provider card layouts.
+- Adaptable forms and dashboard sections.
+- Consistent spacing and typography across devices.
+
+### 🎨 11. Modern User Interface
+
+- Modern dark-themed design.
+- Attractive red, pink and orange gradient accents.
+- Stylish buttons and interactive elements.
+- Professional typography using DM Sans and Outfit.
+- Font Awesome icons.
+- Consistent layouts across application pages.
+- User-friendly navigation and form interfaces.
+
+---
 
 ## 🔄 How QuickServe Works
 
-1. **Sign Up or Log In** — Users authenticate through Supabase.
-2. **Explore Services** — Customers browse the available service categories.
-3. **Discover Providers** — Explore provider listings and use available filters.
-4. **Book a Service** — Submit a booking request for the required service.
-5. **Manage Activities** — Customers and providers access their respective dashboards.
-6. **Manage Data** — Supported workflows use Supabase database operations to create, retrieve, update, or delete records.
+The platform follows a simple service discovery and booking workflow.
 
-## 👥 User Roles
+**For Customers:**
 
-### 👤 Customer
+1. Create an account or log in.
+2. Explore available service categories.
+3. Search for the required service.
+4. Browse available service providers.
+5. Apply location or rating filters.
+6. View detailed provider profiles.
+7. Submit a service booking request.
+8. Access booking information through the Customer Dashboard.
 
-Customers can use the platform to:
+**For Service Providers:**
 
-- Explore service categories.
-- Browse available service providers.
-- Review provider information and ratings.
-- Submit service booking requests.
-- Access customer dashboard features.
-- Manage supported booking-related activities.
+1. Register as a Service Provider.
+2. Log in to the platform.
+3. Open the My Listing section.
+4. Select a service category.
+5. Add location, experience and pricing.
+6. Provide a service description and listing photo.
+7. Save the service listing.
+8. Access the Provider Dashboard.
+9. View and manage incoming booking requests.
 
-### 🧰 Service Provider
+---
 
-Service providers can use the platform to:
+## 🧑‍💻 Technology Stack
 
-- Access the provider dashboard.
-- Set up and manage their service listing.
-- View and manage supported booking requests.
-- Participate in the service booking workflow.
+| Technology | Purpose |
+|---|---|
+| HTML5 | Website structure and page content |
+| CSS3 | Custom styling and responsive layouts |
+| JavaScript | Dynamic functionality and application logic |
+| Bootstrap 5 | Responsive layout and UI components |
+| Supabase Authentication | User registration and login |
+| Supabase Database | Application data storage and CRUD operations |
+| Supabase Storage | Image storage integration |
+| Font Awesome | Icons and visual elements |
+| Google Fonts | DM Sans and Outfit typography |
+| Git & GitHub | Version control and source code management |
+| Netlify | Live website deployment |
 
-## 📚 What I Learned
+---
 
-Through this project, I gained practical experience in:
+## 🗄️ Backend Integration
 
-- Developing responsive websites using HTML, CSS, JavaScript, and Bootstrap.
-- Integrating Supabase Authentication into a frontend application.
-- Working with database CRUD operations.
-- Connecting frontend interfaces with backend services.
-- Designing customer and service-provider workflows.
-- Building service discovery and booking interfaces.
-- Improving UI consistency and responsive layouts.
-- Using Git and GitHub to manage source code.
-- Understanding how frontend and backend functionality work together in a real-world project.
+QuickServe uses Supabase to connect its frontend with backend services.
+
+### Supabase Authentication
+- User sign-up.
+- User login.
+- Customer and Provider role selection.
+- Authentication-based application workflows.
+
+### Supabase Database
+The application uses database operations to support its dynamic features.
+
+- **Create:** Add provider listings and booking-related records.
+- **Read:** Retrieve and display service, provider and booking information.
+- **Update:** Modify supported application records.
+- **Delete:** Remove records where deletion functionality is implemented.
+
+### Supabase Storage
+Image storage integration supports provider listing photos and their display within the application.
+
+---
+
+## 📂 Project Structure
+
+```text
+Quick-Serve/
+│
+├── css/
+│   ├── style.css
+│   ├── auth.css
+│   ├── services.css
+│   ├── navigation.css
+│   ├── profiles.css
+│   └── list.css
+│
+├── files/
+│
+├── js/
+│   ├── supabase.js
+│   ├── auth.js
+│   ├── signup1.js
+│   └── ... other application scripts
+│
+├── index.html
+├── page.html
+├── login.html
+├── services.html
+├── providers.html
+├── providers-profile.html
+├── customer-dashboard.html
+├── provider-dashboard.html
+├── provider-setup.html
+├── profile.html
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+Want to run QuickServe locally? Follow these steps.
+
+**1. Clone the repository**
+
+```bash
+git clone https://github.com/UfaqFatima786/Quick-Serve.git
+```
+
+**2. Navigate to the project folder**
+
+```bash
+cd Quick-Serve
+```
+
+**3. Configure Supabase**
+
+- Create a project on [Supabase](https://supabase.com/).
+- Configure the required authentication settings.
+- Set up the required database tables and storage buckets.
+- Add your Supabase Project URL and Anon/Publishable Key to the application's Supabase configuration file.
+- Ensure the database schema matches the application code.
+
+**4. Run the project**
+
+Open `index.html` or `page.html` using Live Server in VS Code.
+
+Make sure the Supabase configuration is properly set up before testing authentication and database-connected functionality.
+
+---
 
 ## 🎯 Project Objectives
 
-- Simplify the process of discovering local service providers.
-- Create a convenient platform for customers and service professionals.
-- Practice building a database-connected web application.
-- Demonstrate frontend development and backend integration skills.
-- Develop a responsive and user-friendly booking experience.
+- Simplify the process of finding local service professionals.
+- Provide a convenient platform for customers and service providers.
+- Implement separate workflows for different user roles.
+- Practice real-world Supabase Authentication integration.
+- Understand database CRUD operations.
+- Develop dynamic service discovery and booking functionality.
+- Create responsive and user-friendly web interfaces.
+- Strengthen frontend development and backend integration skills.
 
-## 🔮 Future Improvements
+---
 
-Potential improvements for QuickServe include:
+## 📚 What I Learned
 
-- Online payment integration.
+Building QuickServe helped me gain practical experience in:
+
+- Developing multi-page web applications.
+- Creating responsive interfaces using HTML, CSS and Bootstrap.
+- Implementing dynamic functionality using JavaScript.
+- Integrating Supabase Authentication.
+- Connecting frontend applications with a backend database.
+- Working with database CRUD operations.
+- Implementing customer and provider workflows.
+- Creating service discovery and filtering functionality.
+- Managing provider listings and booking-related data.
+- Organizing project files and maintaining consistent UI design.
+- Using Git and GitHub for version control.
+- Deploying a web application using Netlify.
+
+---
+
+## 🚀 Future Enhancements
+
+Potential improvements for QuickServe:
+
+- Online payment gateway integration.
 - Real-time booking notifications.
-- Advanced provider search and filtering.
-- Improved booking status tracking.
-- Customer reviews and feedback management.
-- Enhanced provider verification and profile management.
+- Advanced booking status tracking.
+- Improved provider verification.
+- Enhanced customer feedback and review management.
+- Real-time communication between customers and providers.
+- Additional search and filtering options.
+
+---
 
 ## 👩‍💻 Developer
 
-**Syeda Ufaq Fatima**
+**Ufaq Fatima**
 
-Frontend Web Developer | UI Enthusiast
+Frontend Web Developer | Geography Graduate
 
-- **GitHub:** [@UfaqFatima786](https://github.com/UfaqFatima786)
-- **Project Repository:** [Quick-Serve](https://github.com/UfaqFatima786/Quick-Serve)
+- GitHub: [@UfaqFatima786](https://github.com/UfaqFatima786)
+- Project: [QuickServe Repository](https://github.com/UfaqFatima786/Quick-Serve)
+- Live Demo: [QuickServe Website](https://quick-serve-hackathon.netlify.app/)
 
 ---
 
 <p align="center">
-  ⭐ If you find this project interesting, consider giving the repository a star!
-</p>
-
-<p align="center">
-  Built with ❤️ and a passion for web development.
+  <strong>⚡ QuickServe – Connecting Customers with Local Professionals!</strong>
+  <br/>
+  Built with ❤️ by Ufaq Fatima
+  <br/><br/>
+  ⭐ If you like this project, don't forget to give the repository a star!
 </p>
