@@ -39,8 +39,6 @@ Service providers can create their own service listings, showcase their experien
 
 The application integrates **Supabase Authentication and Database** to support user authentication and dynamic application data.
 
-QuickServe features a modern dark-themed interface with attractive red, pink, and orange gradient accents, interactive elements, and responsive layouts for different screen sizes.
-
 ---
 
 ## ✨ Features & Functionality
